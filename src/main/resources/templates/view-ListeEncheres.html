@@ -1,0 +1,28 @@
+<html data-th-replace="~{layout::layout(title=~{::title}, main=~{::main}, header=~{::header})}">
+
+<title>Liste d'enchères</title>
+
+<main>
+
+  <div class="liste">
+    <table>
+      <thead>
+      <tr>
+        <th>Article</th>
+        <th>Prix</th>
+        <th>Fin de l'enchère</th>
+        <th>Vendeur</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr data-th-each = "a: ${article}">
+        <td  data-th-text="${a.nom}"> </td>
+        <td data-th-text="${a.Prix}"></td>
+        <td ><span class="action"> <a th:href="@{/detail(id=${a.id})}" >Detail</a>
+      </form>  </span>
+      </tbody>
+    </table>
+  </div>
+</main>
+</html>

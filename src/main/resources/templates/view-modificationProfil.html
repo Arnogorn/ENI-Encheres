@@ -1,0 +1,52 @@
+<html data-th-replace="~{layout::layout(title=~{::title}, main=~{::main}, header=~{::header})}">
+
+<title data-th-text="${profil.nom}"></title>
+
+
+<main>
+  <div class="detMod">
+
+    <form data-th-object="${profil}" method="post" data-th-action="@{/modifier(id=${nom.id})}">
+      <h1>Modification du profil</h1>
+      <ul class="flex-outer">
+        <li>
+          <label for="inputPseudo"> Pseudo : </label>
+          <input type="text" id="inputPseudo" data-th-field="*{pseudo}"/>
+        </li>
+        <li>
+          <label for="inputNom"> Nom : </label>
+          <input type="text" id="inputNom" data-th-field="*{nom}"/>
+        </li>
+        <li>
+          <label for="inputPrenom"> Prénom : </label>
+          <input type="text" id="inputPrenom" data-th-field="*{prenom}"/>
+        </li>
+        <li>
+          <label for="inputEmail"> Email : </label>
+          <input type="text" id="inputEmail" data-th-field="*{email}"/>
+        </li>
+        <li>
+          <label for="inputTelephone"> Telephone : </label>
+          <input type="text" id="inputTelephone" data-th-field="*{telephone}"/>
+        </li>
+        <li>
+          <label for="inputRue"> Rue : </label>
+          <input type="text" id="inputRue" data-th-field="*{rue}"/>
+        </li>
+        <li>
+          <label for="inputCodepostale"> Code postale : </label>
+          <input type="text" id="inputCodepostale" data-th-field="*{codePostal}"/>
+        </li>
+        <li>
+          <label for="inputVille"> Ville : </label>
+          <input type="text" id="inputVille" data-th-field="*{ville}"/>
+        </li>
+
+      </ul>
+      <button type="submit">Modifier</button>
+      <button type="submit">Enregistrer</button>
+      <button type="submit">Supprimer le compte</button>
+    </form>
+  </div>
+</main>
+</html>

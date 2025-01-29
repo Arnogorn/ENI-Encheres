@@ -1,0 +1,18 @@
+git pull
+-> récupere la main du repo
+
+git branch "NomDeLaBranche"
+git switch NomDeLaBranche
+-> crée une branche qui a le nom defini et va dessus !
+
+git add .
+-> ajoute tes modifs a la branche ;^)
+
+git push origin NomDeLaBranche
+->balance ta branche sur le web
+
+-> Aller sur le navigateur pour valider la branche :^)
+
+git switch main
+
+->on repart tout en haut

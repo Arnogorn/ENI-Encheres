@@ -1,0 +1,16 @@
+<html data-th-replace="~{layout::layout(title=~{::title}, main=~{::main}, header=~{::header})}">
+
+
+<title data-th-text="${article.nom}"></title>
+
+
+<main>
+  <div class="detMod">
+    <form data-th-replace="~{layout::articleform(readonly)}">
+    </form>
+
+  </div>
+</main>
+
+
+</html>

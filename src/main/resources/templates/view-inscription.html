@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layout::layout(title=~{::title}, main=~{::main})}">
+<title>Inscription</title>
+
+<main>
+  <form method="post" data-th-action="inscription">
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email"required>
+
+    <label for="password">Mots de passe :</label>
+    <input type="password" id="password" name="password"required>
+
+    <label for="password">Confirme mots de passe :</label>
+    <input type="password" id="password" name="password"required>
+
+    <label for="pseudo">Pseudo :</label>
+    <input type="pseudo" id="pseudo" name="pseudo"required>
+
+    <label for="Prenom">Prénom :</label>
+    <input type="Prenom" id="prenom" name="prenom"required>
+
+    <label for="telephone">Téléphone :</label>
+    <input type="telephone" id="telephone" name="telephone"required>
+
+    <label for="Code postale">Code postale :</label>
+    <input type="Code postale" id="Code postale" name="Code postale"required>
+
+    <label for="nom">Nom :</label>
+    <input type="nom" id="nom" name="nom"required>
+
+    <label for="Ville">Ville :</label>
+    <input type="ville" id="ville" name="ville"required>
+
+    <label for="rue">Rue :</label>
+    <input type="rue" id="rue" name="rue"required>
+
+    <button type="submit">Créer</button>
+    <button type="submit">Annuler</button>
+  </form>
+</main>
+</html>
