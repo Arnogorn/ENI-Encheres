@@ -14,17 +14,19 @@ import java.util.List;
 public class DAOArticleVenduSQL implements DAOArticleVendu {
 
     static final String SELECT_ALL = "select * from Articles_Vendus";
-    static final String SELECT_BY_ID = "select * from Articles_Vendus where id=?";
-    static final String INSERT = "INSERT  INTO Article_Vendu ([no_article],[nom_article],[descritpion],[date_debut_encheres],[date_fin_encheres],[prix_initial],[prix_vente],[no_utilisateur],[no_categorie]) VALUES (:no_article,:nom_article,:descritpion,:date_debut_encheres,:date_fin_encheres,:prix_initial,:prix_vente,:no_utilisateur,:no_categorie)";
-    static final String DELETE = "DELETE FROM Article_Vendu where no_article=?";
-    static final String UPDATE = "UPDATE Article_Vendu set nom_article=?,descritpion=?,date_debut_encheres=?,date_fin_encheres=?,prix_initial=?,prix_vente=?,no_utilisateur=?,no_categorie=? where no_article=?";
+    static final String SELECT_BY_ID = "select * from Articles_Vendus where no_article=?";
+    static final String INSERT = "INSERT  INTO ARTICLES_VENDUS ([nom_article],[description],[date_debut_encheres],[date_fin_encheres],[prix_initial],[prix_vente],[no_utilisateur],[no_categorie]) VALUES (:nom_article,:descritpion,:date_debut_encheres,:date_fin_encheres,:prix_initial,:prix_vente,:no_utilisateur,:no_categorie)";
+    static final String DELETE = "DELETE FROM ARTICLES_VENDUS where no_article=?";
+    static final String UPDATE = "UPDATE ARTICLES_VENDUS set nom_article=?,description=?,date_debut_encheres=?,date_fin_encheres=?,prix_initial=?,prix_vente=?,no_utilisateur=?,no_categorie=? where no_article=?";
 
     JdbcTemplate jdbcTemplate;
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private ArticleRowMappper articleRowMappper;
 
-    public DAOArticleVenduSQL(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    public DAOArticleVenduSQL(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate, ArticleRowMappper articleRowMappper) {
         this.jdbcTemplate = jdbcTemplate;
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+        this.articleRowMappper = articleRowMappper;
     }
 
     @Override
@@ -45,12 +47,12 @@ public class DAOArticleVenduSQL implements DAOArticleVendu {
 
     @Override
     public List<ArticleVendu> read() {
-        return jdbcTemplate.query(SELECT_ALL, BeanPropertyRowMapper.newInstance(ArticleVendu.class));
+        return jdbcTemplate.query(SELECT_ALL,articleRowMappper);
     }
 
     @Override
     public ArticleVendu read(int id) {
-        return jdbcTemplate.queryForObject(SELECT_BY_ID, BeanPropertyRowMapper.newInstance(ArticleVendu.class), id);
+        return jdbcTemplate.queryForObject(SELECT_BY_ID, articleRowMappper, id);
     }
 
     @Override

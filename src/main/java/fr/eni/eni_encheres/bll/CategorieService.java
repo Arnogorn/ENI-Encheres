@@ -11,7 +11,7 @@ public interface CategorieService {
 
     List<Categorie> getCategorie();
 
-    Categorie getCategoriebyID(int noArticle);
+    Categorie getCategoriebyID(int noCategorie);
 
     void updateCategorie(Categorie categorie);
 }
