@@ -32,7 +32,7 @@ public class EnchereController {
     }
     @GetMapping("/creerVente")
     public String creerVente(Model model) {
-        model.addAttribute("article", new ArticleVendu());
+        model.addAttribute("articleVendu", new ArticleVendu());
         return "view-NouvelleVente";
     }
     @GetMapping("/listeObjet")

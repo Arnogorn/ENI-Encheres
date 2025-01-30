@@ -15,35 +15,46 @@
   <div class="encadre form-section">
     <div>
       <h2>Nouvelle Vente</h2>
-      <form id="formulaireVente">
-        <label for="article">Article :</label>
-        <input type="text" id="article" name="article" required>
-
-        <label for="description">Description :</label>
-        <textarea id="description" name="description" rows="3" required></textarea>
-
-        <label for="categorie">Catégorie :</label>
-        <select id="categorie" name="categorie" required>
-          <option value="informatique">Informatique</option>
-          <option value="ameublement">Ameublement</option>
-          <option value="vetement">Vêtement</option>
-          <option value="loisir&Sport">Loisir&Sport</option>
-        </select>
-
-        <label for="miseaprix">Mise à prix :</label>
-        <input type="number" id="miseaprix" name="miseaprix" required>
-
-        <label for="debutenchere">Début de l'enchère :</label>
-        <input type="date" id="debutenchere" name="debutenchere" required>
-
-        <label for="finenchere">Fin des enchères :</label>
-        <input type="date" id="finenchere" name="finenchere" required>
+      <form th:object="${articleVendu}" method="post" th:action="@{/creerVente}" id="formulaireVente">
+        <ul>
+          <li>
+            <label for="inputArticle">Nom de l'article :</label>
+            <input type="text" id="inputArticle" th:field="*{nomArticle}" required />
+          </li>
+          <li>
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" th:field="*{description}" rows="3" required></textarea>
+          </li>
+          <li>
+            <label for="categorie">Catégorie :</label>
+            <select id="categorie" name="categorie" th:field="*{categorie}" required>
+              <option value="informatique">Informatique</option>
+              <option value="ameublement">Ameublement</option>
+              <option value="vetement">Vêtement</option>
+              <option value="loisir&Sport">Loisir&Sport</option>
+            </select>
+          </li>
+          <li>
+            <label for="miseaprix">Mise à prix :</label>
+            <input type="number" id="miseaprix" name="miseaprix" th:field="*{miseAPrix}" required>
+          </li>
+          <li>
+            <label for="debutenchere">Début de l'enchère :</label>
+            <input type="date" id="debutenchere" name="debutenchere" th:field="*{dateDebutEncheres}" required>
+          </li>
+          <li>
+            <label for="finenchere">Fin des enchères :</label>
+            <input type="date" id="finenchere" name="finenchere" th:field="*{dateFinEncheres}" required>
+          </li>
+        </ul>
       </form>
     </div>
+  </div>
 
-    <div>
+
+  <div>
       <h2>Retrait</h2>
-      <form id="formulaireRetrait">
+      <form method="post" id="formulaireRetrait">
         <label for="rue">Rue :</label>
         <input type="text" id="rue" name="rue" required>
 
