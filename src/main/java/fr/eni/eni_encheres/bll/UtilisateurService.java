@@ -14,4 +14,7 @@ public interface UtilisateurService {
     Utilisateur getUtilisateurByNoUtilisateur(int noUtilisateur);
 
 
+    List<Utilisateur> getAllUtilisateurs();
+
+    void update(Utilisateur utilisateur);
 }
