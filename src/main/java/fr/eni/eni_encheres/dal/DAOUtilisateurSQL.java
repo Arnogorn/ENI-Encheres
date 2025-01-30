@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,12 +16,12 @@ import java.util.List;
 @Repository
 public class DAOUtilisateurSQL implements DAOUtilisateur{
 
-    static final String SELECT_ALL = "SELECT * from utilisateur";
-    static final String SELECT_BY_ID = "SELECT * from utilisateur where no_utilisateur = :no_utilisateur";
-    static final String SELECT_BY_PSEUDO = "SELECT * from utilisateur where pseudo = :pseudo";
-    static final String INSERT = "INSERT  INTO utilisateur ([pseudo],[nom],[prenom],[email],[telephone],[rue],[code_postal],[ville],[mot_de_passe],[credit],[administrateur]) VALUES (:psuedo,:nom,:prenom,:email,:telephone,:rue,:code_postal,:ville,:mot_de_passe,0,0)";
-    static final String DELETE = "DELETE FROM utilisateur where no_utilisateur=?";
-    static final String UPDATE = "UPDATE utilisateur set pseudo=?,nom=?,prenom=?,email=?,telephone=?,rue=?,code_postal=?,ville=?,mot_de_passe=?,credit=?,administrateur=? where id=?";
+    static final String SELECT_ALL = "SELECT * from UTILISATEURS";
+    static final String SELECT_BY_ID = "SELECT * from UTILISATEURS where no_utilisateur = ?";
+    static final String SELECT_BY_PSEUDO = "SELECT * from UTILISATEURS where pseudo = ?";
+    static final String INSERT = "INSERT  INTO UTILISATEURS ([pseudo],[nom],[prenom],[email],[telephone],[rue],[code_postal],[ville],[mot_de_passe],[credit],[administrateur]) VALUES (:psuedo,:nom,:prenom,:email,:telephone,:rue,:code_postal,:ville,:mot_de_passe,0,0)";
+    static final String DELETE = "DELETE FROM UTILISATEURS where no_utilisateur=?";
+    static final String UPDATE = "UPDATE UTILISATEURS set pseudo=?,nom=?,prenom=?,email=?,telephone=?,rue=?,code_postal=?,ville=?,mot_de_passe=?,credit=?,administrateur=? where no_utilisateur=?";
 
 
 

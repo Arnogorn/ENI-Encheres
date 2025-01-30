@@ -34,4 +34,14 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     public Utilisateur getUtilisateurByNoUtilisateur(int noUtilisateur) {
         return daoUtilisateur.read(noUtilisateur);
     }
+
+    @Override
+    public List<Utilisateur> getAllUtilisateurs() {
+        return List.of();
+    }
+
+    @Override
+    public void update(Utilisateur utilisateur) {
+        daoUtilisateur.update(utilisateur);}
+
 }
