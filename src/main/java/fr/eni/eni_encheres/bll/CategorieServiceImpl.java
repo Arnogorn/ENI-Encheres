@@ -23,8 +23,8 @@ public class CategorieServiceImpl implements CategorieService {
     }
 
     @Override
-    public void deleteCategorie(int noArticle) {
-        daoCategorie.delete(noArticle);
+    public void deleteCategorie(int noCategorie) {
+        daoCategorie.delete(noCategorie);
     }
 
     @Override

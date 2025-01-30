@@ -8,19 +8,29 @@
     <table>
       <thead>
       <tr>
-        <th>Article</th>
-        <th>Prix</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Début de l'enchère</th>
         <th>Fin de l'enchère</th>
+        <th>Mise à prix</th>
+        <th>Categorie</th>
         <th>Vendeur</th>
       </tr>
       </thead>
 
       <tbody>
-      <tr data-th-each = "a: ${article}">
-        <td  data-th-text="${a.nom}"> </td>
-        <td data-th-text="${a.Prix}"></td>
-        <td ><span class="action"> <a th:href="@{/detail(id=${a.id})}" >Detail</a>
-      </form>  </span>
+
+      <tr data-th-each = "a: ${articleVendu}">
+        <td  data-th-text="${a.nomArticle}"></td>
+        <td data-th-text="${a.description}"></td>
+        <td data-th-text="${a.dateDebutEncheres}"></td>
+        <td data-th-text="${a.dateFinEncheres}"></td>
+        <td data-th-text="${a.miseAPrix}"></td>
+        <td data-th-text="${a.categorie != null ? a.categorie.libelle : 'N/A'}"></td>
+        <td data-th-text="${a.utilisateur != null ? a.utilisateur.pseudo : 'N/A'}"></td>
+      <span class="action"> <a th:href="@{/detail(id=${a.noArticle})}" >Detail</a>
+      </span>
+
       </tbody>
     </table>
   </div>

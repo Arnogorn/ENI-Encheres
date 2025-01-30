@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org" lang="fr" data-th-fragment="layout(title,main,header)" >
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr" data-th-fragment="layout(title,header)" >
 <link rel="stylesheet" href="../static/CSS/css.css">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
                                 Options
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Codition generales</a></li>
+                                <li><a class="dropdown-item" href="#">Conditions generales</a></li>
                                 <li><a class="dropdown-item" href="#">Autres action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -52,7 +52,7 @@
     <!--2 Nav---->
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link" href="#">Encheres</a>
+            <a class="nav-link" data-th-href="@{/listeObjet}">Encheres</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Vendre un article</a>
@@ -77,7 +77,7 @@
     </div>
 </header>
 
-
+<main data-th-replace="${main}"></main>
 
 
 
