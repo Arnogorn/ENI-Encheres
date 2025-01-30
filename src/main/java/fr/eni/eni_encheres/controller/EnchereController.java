@@ -1,11 +1,19 @@
 package fr.eni.eni_encheres.controller;
 
+import fr.eni.eni_encheres.bo.ArticleVendu;
+
 import fr.eni.eni_encheres.bll.ArticleVenduService;
 import fr.eni.eni_encheres.bll.CategorieService;
 import fr.eni.eni_encheres.bll.UtilisateurService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+
+
+
+
 
 
 @Controller
@@ -22,6 +30,11 @@ public class EnchereController {
         this.categorieService = categorieService;
 
     }
+    @GetMapping("/creerVente")
+    public String creerVente(Model model) {
+        model.addAttribute("article", new ArticleVendu());
+        return "view-NouvelleVente";
+    }
     @GetMapping("/listeObjet")
     public String listeObjet(Model model) {
         var articleVendu = articleVenduService.getArticleVendu();
@@ -30,6 +43,7 @@ public class EnchereController {
 
         return "view-ListeEncheres";
     }
+
 
 
 

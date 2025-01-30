@@ -1,0 +1,73 @@
+<html data-th-replace="~{layout::layout(title=~{::title}, main=~{::main}, header=~{::header})}">
+<script src="/JavaScript/page.NouvelleVente.js"></script>
+<title>Nouvelle vente</title>
+
+<main>
+<h1>Nouvelle vente</h1>
+<div class="container">
+  <div class="encadre">
+    <h2>Images de l'article</h2>
+    <div class="images" id="imagesContainer"></div>
+    <input type="file" id="photo" accept="image/*" onchange="addImage(event)" multiple>
+    <script src="/JavaScript/page.NouvelleVente.js"></script>
+  </div>
+
+  <div class="encadre form-section">
+    <div>
+      <h2>Nouvelle Vente</h2>
+      <form id="formulaireVente">
+        <label for="article">Article :</label>
+        <input type="text" id="article" name="article" required>
+
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" rows="3" required></textarea>
+
+        <label for="categorie">Catégorie :</label>
+        <select id="categorie" name="categorie" required>
+          <option value="informatique">Informatique</option>
+          <option value="ameublement">Ameublement</option>
+          <option value="vetement">Vêtement</option>
+          <option value="loisir&Sport">Loisir&Sport</option>
+        </select>
+
+        <label for="miseaprix">Mise à prix :</label>
+        <input type="number" id="miseaprix" name="miseaprix" required>
+
+        <label for="debutenchere">Début de l'enchère :</label>
+        <input type="date" id="debutenchere" name="debutenchere" required>
+
+        <label for="finenchere">Fin des enchères :</label>
+        <input type="date" id="finenchere" name="finenchere" required>
+      </form>
+    </div>
+
+    <div>
+      <h2>Retrait</h2>
+      <form id="formulaireRetrait">
+        <label for="rue">Rue :</label>
+        <input type="text" id="rue" name="rue" required>
+
+
+        <label for="codePostal">Code postal :</label>
+        <input type="text" id="codePostal" name="codePostal" maxlength="5" pattern="\d{5}" required>
+
+        <label for="ville">Ville :</label>
+        <input list="villes" id="ville" name="ville" required>
+        <datalist id="villes">
+          <option value="Paris">
+          <option value="Marseille">
+          <option value="Lyon">
+          <option value="Toulouse">
+          <option value="Nice">
+        </datalist>
+
+        <div>
+          <input type="button" value="Enregistrer" onclick="enregistrerAnnonce()">
+          <input type="reset" value="Annuler">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</main>
+</html>
